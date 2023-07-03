@@ -31,7 +31,7 @@ const UsersList = () => {
     return (
         <div>
             <h2>Fetch Users</h2>
-            {isLoading ? <SkeletonLoader /> : renderUsers}
+            {isLoading ? <SkeletonLoader times={5} /> : renderUsers}
             {err ? renderError() : ''}
         </div>
     )
