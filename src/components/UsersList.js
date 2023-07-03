@@ -15,7 +15,7 @@ const UsersList = () => {
     })
 
     const renderUsers = data.map((user) => {
-        return <div>{user.name}</div>
+        return <div key={user.id} >{user.name}</div>
     })
 
     const renderLoading = () => {
