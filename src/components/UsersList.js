@@ -19,14 +19,6 @@ const UsersList = () => {
         return <div key={user.id} >{user.name}</div>
     })
 
-    const renderLoading = () => {
-        return (
-            <div>
-                <label className=''>Loading</label>
-            </div>
-        )
-    }
-
     const renderError = () => {
         console.log(err.message)
         return (
