@@ -10,18 +10,36 @@ const UsersList = () => {
         dispatch(fetchUsers());
     }, [dispatch])
 
-    const users = useSelector((state) => {
+    const { data, isLoading, err } = useSelector((state) => {
         return state.users;
     })
 
-    const renderUsers = users.data.map((user) => {
+    const renderUsers = data.map((user) => {
         return <div>{user.name}</div>
     })
+
+    const renderLoading = () => {
+        return (
+            <div>
+                <label className=''>Loading</label>
+            </div>
+        )
+    }
+
+    const renderError = () => {
+        console.log(err.message)
+        return (
+            <div>
+                <label>{err.message}</label>
+            </div>
+        )
+    }
 
     return (
         <div>
             <h2>Fetch Users</h2>
-            {renderUsers}
+            {isLoading ? renderLoading() : renderUsers}
+            {err ? renderError() : ''}
         </div>
     )
 }
