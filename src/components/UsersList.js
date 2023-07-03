@@ -1,6 +1,7 @@
-import React, { useEffect } from 'react'
-import { fetchUsers } from '../store'
-import { useSelector, useDispatch } from 'react-redux'
+import React, { useEffect } from 'react';
+import { fetchUsers } from '../store';
+import { useSelector, useDispatch } from 'react-redux';
+import SkeletonLoader from './SkeletonLoader';
 
 const UsersList = () => {
 
@@ -38,7 +39,7 @@ const UsersList = () => {
     return (
         <div>
             <h2>Fetch Users</h2>
-            {isLoading ? renderLoading() : renderUsers}
+            {isLoading ? <SkeletonLoader /> : renderUsers}
             {err ? renderError() : ''}
         </div>
     )
