@@ -16,7 +16,11 @@ const UsersList = () => {
     })
 
     const renderUsers = data.map((user) => {
-        return <div key={user.id} >{user.name}</div>
+        return (
+            <div className='mb-2 border rounded'>
+                <div key={user.id} className='flex p-2 justify-between items-center cursor-pointer'>{user.name}</div>
+            </div>
+        )
     })
 
     const renderError = () => {
