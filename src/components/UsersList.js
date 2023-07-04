@@ -30,9 +30,11 @@ const UsersList = () => {
 
     return (
         <div>
-            <h2>Fetch Users</h2>
-            {isLoading ? <SkeletonLoader times={5} heightNwidth='h-10 w-full' /> : renderUsers}
-            {err ? renderError() : ''}
+            <label className='text-xl font-bold' >Users</label>
+            <div className='mt-5'>
+                {isLoading ? <SkeletonLoader times={5} heightNwidth='h-10 w-full' /> : renderUsers}
+                {err ? renderError() : ''}
+            </div>
         </div>
     )
 }
