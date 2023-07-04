@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
-import { fetchUsers } from '../store';
+import { fetchUsers, addUser } from '../store';
 import { useSelector, useDispatch } from 'react-redux';
 import SkeletonLoader from './SkeletonLoader';
+import Button from './Button'
 
 const UsersList = () => {
 
@@ -32,10 +33,17 @@ const UsersList = () => {
         )
     }
 
+    const handleAddUser = () => {
+        dispatch(addUser());
+    }
+
     return (
         <div>
-            <label className='text-xl font-bold' >Users</label>
-            <div className='mt-5'>
+            <div className='flex flex-row justify-between m-3 items-center' >
+                <label className='text-xl font-bold' >Users</label>
+                <Button primary onClick={handleAddUser}>Add User</Button>
+            </div>
+            <div className=''>
                 {isLoading ? <SkeletonLoader times={5} heightNwidth='h-10 w-full' /> : renderUsers}
                 {err ? renderError() : ''}
             </div>
