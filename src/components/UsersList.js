@@ -18,8 +18,9 @@ const UsersList = () => {
             .then(() => {
                 setLoadingUsers(false);
             })
-            .catch((res) => {
-                setLoadingUsersErr(res.error);
+            .catch((err) => {
+                setLoadingUsers(false);
+                setLoadingUsersErr(err.message);
             })
     }, [dispatch])
 

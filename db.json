@@ -1,24 +1,12 @@
 {
   "users": [
     {
-      "id": 1,
-      "name": "Arpita PK"
+      "name": "Brian Ward PhD",
+      "id": 1
     },
     {
-      "id": 2,
-      "name": "Sucharita Das"
-    },
-    {
-      "name": "Terri Rau",
-      "id": 3
-    },
-    {
-      "name": "Mr. Barry Gutkowski",
-      "id": 4
-    },
-    {
-      "name": "Homer Lebsack",
-      "id": 5
+      "name": "Mr. Dominic Nitzsche",
+      "id": 2
     }
   ],
   "albums": [],
