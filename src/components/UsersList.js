@@ -12,10 +12,18 @@ const UsersList = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(fetchUsers());
+        setLoadingUsers(true)
+        dispatch(fetchUsers())
+            .unwrap()
+            .then(() => {
+                setLoadingUsers(false);
+            })
+            .catch((res) => {
+                setLoadingUsersErr(res.error);
+            })
     }, [dispatch])
 
-    const { data, isLoading, err } = useSelector((state) => {
+    const { data } = useSelector((state) => {
         return state.users;
     })
 
@@ -28,10 +36,9 @@ const UsersList = () => {
     })
 
     const renderError = () => {
-        console.log(err.message)
         return (
             <div>
-                <label>{err.message}</label>
+                <label>{loadingUsersErr}</label>
             </div>
         )
     }
@@ -47,8 +54,8 @@ const UsersList = () => {
                 <Button primary onClick={handleAddUser}>+ Add User</Button>
             </div>
             <div>
-                {isLoading ? <SkeletonLoader times={5} heightNwidth='h-10 w-full' /> : renderUsers}
-                {err ? renderError() : ''}
+                {laodingUsers ? <SkeletonLoader times={5} heightNwidth='h-10 w-full' /> : renderUsers}
+                {loadingUsersErr ? renderError() : ''}
             </div>
         </div>
     )
