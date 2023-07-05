@@ -44,10 +44,10 @@ const UsersList = () => {
     const renderErr = () => {
         return (
             <div className='err-container p-20 flex flex-col items-center '>
-                {/* <iframe src="https://embed.lottiefiles.com/animation/3097" className='mb-5 neterrgif' title='Network Erorr' /> */}
-                {/* <iframe src="https://embed.lottiefiles.com/animation/99345" className='neterrgif mb-5' title='Network Erorr'></iframe> */}
-                {/* <iframe src="https://embed.lottiefiles.com/animation/98284" className='neterrgif mb-5' title='Network Erorr'></iframe> */}
-                <iframe src="https://embed.lottiefiles.com/animation/90333" className='neterrgif mb-5' title='Network Erorr'></iframe>
+                {/* <iframe src="https://embed.lottiefiles.com/animation/3097" className='neterrgif' title='Network Erorr' /> */}
+                <iframe src="https://embed.lottiefiles.com/animation/99345" className='neterrgif' title='Network Erorr'></iframe>
+                {/* <iframe src="https://embed.lottiefiles.com/animation/98284" className='neterrgif' title='Network Erorr'></iframe> */}
+                {/* <iframe src="https://embed.lottiefiles.com/animation/90333" className='neterrgif' title='Network Erorr'></iframe> */}
                 <label className='text-4xl font-light' >{loadingUsersErr + " :("}</label>
             </div >
         )
