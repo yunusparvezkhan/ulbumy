@@ -15,12 +15,11 @@ const UsersList = () => {
         setLoadingUsers(true)
         dispatch(fetchUsers())
             .unwrap()
-            .then(() => {
-                setLoadingUsers(false);
-            })
             .catch((err) => {
-                setLoadingUsers(false);
                 setLoadingUsersErr(err.message);
+            })
+            .finally(() => {
+                setLoadingUsers(false);
             })
     }, [dispatch])
 
