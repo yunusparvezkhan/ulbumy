@@ -9,6 +9,9 @@ const UsersList = () => {
     const [laodingUsers, setLoadingUsers] = useState(false);
     const [loadingUsersErr, setLoadingUsersErr] = useState(null);
 
+    const [isCreatingUser, setIsCreatingUser] = useState(false);
+    const [isCreatingUserErr, setIsCreatingUserErr] = useState(false);
+
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -31,7 +34,19 @@ const UsersList = () => {
     })
 
     const handleAddUser = () => {
-        dispatch(addUser());
+        setIsCreatingUser(true);
+        dispatch(addUser())
+            .unwrap()
+            .catch((err) => setIsCreatingUserErr(err.message))
+            .finally(() => setIsCreatingUser(false));
+    }
+
+    const renderAddUserBtn = () => {
+        if (isCreatingUser) {
+            return <Button className="border-none" >Adding a new user...</Button>
+        } else {
+            return <Button primary onClick={handleAddUser}>+ Add User</Button>
+        }
     }
 
     const renderErr = () => {
@@ -51,7 +66,7 @@ const UsersList = () => {
         <div>
             <div className='flex flex-row justify-between m-3 items-center' >
                 <label className='text-xl font-bold' >Users</label>
-                <Button primary onClick={handleAddUser}>+ Add User</Button>
+                {renderAddUserBtn()}
             </div>
             <div>
                 {laodingUsers ? <SkeletonLoader times={5} heightNwidth='h-10 w-full' /> : renderUsers}
