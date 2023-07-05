@@ -4,8 +4,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import SkeletonLoader from './SkeletonLoader';
 import Button from './Button'
 
-import netErrGif from '../media/videos/3097-network-error.gif';
-
 const UsersList = () => {
 
     const [laodingUsers, setLoadingUsers] = useState(false);
@@ -16,13 +14,8 @@ const UsersList = () => {
     useEffect(() => {
         setLoadingUsers(true);
         dispatch(fetchUsers())
-            .unwrap()
-            .catch((err) => {
-                setLoadingUsersErr(err.message);
-            })
-            .finally(() => {
-                setLoadingUsers(false);
-            });
+            .unwrap().catch((err) => setLoadingUsersErr(err.message))
+            .finally(() => setLoadingUsers(false));
     }, [dispatch])
 
     const { data } = useSelector((state) => {
@@ -67,4 +60,4 @@ const UsersList = () => {
     )
 }
 
-export default UsersList
+export default UsersList;
