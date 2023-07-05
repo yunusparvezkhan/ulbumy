@@ -46,8 +46,8 @@ const UsersList = () => {
         if (isCreatingUser) {
             return (
                 <div className='flex flex-row items-center' >
-                    <label className="border-none" >Adding a new user...</label>
-                    <iframe src="https://embed.lottiefiles.com/animation/98432" width="70px" height="70px" title='Adding a user' ></iframe>
+                    <iframe src="https://embed.lottiefiles.com/animation/98432" width="35px" height="35px" className='mr-3' title='Adding a user' ></iframe>
+                    <Button className="bg-gray-700 text-gray-400 border-gray-400" >+ Add User</Button>
                 </div>
             )
         } else {
