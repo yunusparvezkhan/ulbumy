@@ -6,7 +6,7 @@ function App() {
     <div className="App">
       <div className="container mx-auto">
         <center>
-          <h1 className="text-3xl font-bold underline" >Ulbumy</h1>
+          <h1 className="text-3xl font-bold underline mt-5 mb-10" >Ulbumy</h1>
         </center>
         <UsersList />
       </div>
