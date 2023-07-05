@@ -3,11 +3,11 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
 const addUser = createAsyncThunk('users/add', async () => {
-    const res = await axios.post("http://localhost:3010/users", {
+    const res = await axios.post("http://lcalhost:3010/users", {
         name: faker.person.fullName()
     });
     // Dev Only
-    await pause(1000)
+    await pause(10000)
 
     return res.data;
 });

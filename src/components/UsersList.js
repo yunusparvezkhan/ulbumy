@@ -10,7 +10,7 @@ const UsersList = () => {
     const [loadingUsersErr, setLoadingUsersErr] = useState(null);
 
     const [isCreatingUser, setIsCreatingUser] = useState(false);
-    const [isCreatingUserErr, setIsCreatingUserErr] = useState(false);
+    const [isCreatingUserErr, setIsCreatingUserErr] = useState(null);
 
     const dispatch = useDispatch();
 
@@ -35,6 +35,7 @@ const UsersList = () => {
 
     const handleAddUser = () => {
         setIsCreatingUser(true);
+        setIsCreatingUserErr(null);
         dispatch(addUser())
             .unwrap()
             .catch((err) => setIsCreatingUserErr(err.message))
@@ -43,7 +44,12 @@ const UsersList = () => {
 
     const renderAddUserBtn = () => {
         if (isCreatingUser) {
-            return <Button className="border-none" >Adding a new user...</Button>
+            return (
+                <div className='flex flex-row items-center' >
+                    <label className="border-none" >Adding a new user...</label>
+                    <iframe src="https://embed.lottiefiles.com/animation/98432" width="70px" height="70px" title='Adding a user' ></iframe>
+                </div>
+            )
         } else {
             return <Button primary onClick={handleAddUser}>+ Add User</Button>
         }
@@ -64,10 +70,15 @@ const UsersList = () => {
 
     return (
         <div>
-            <div className='flex flex-row justify-between m-3 items-center' >
+            <div className='flex flex-row justify-between m-2 items-center' >
                 <label className='text-xl font-bold' >Users</label>
                 {renderAddUserBtn()}
             </div>
+
+            <div className='mb-3' >
+                {isCreatingUserErr ? <p className='text-red-500 text-right ' >{isCreatingUserErr}</p> : ''}
+            </div>
+
             <div>
                 {laodingUsers ? <SkeletonLoader times={5} heightNwidth='h-10 w-full' /> : renderUsers}
                 {loadingUsersErr ? renderErr() : ''}
