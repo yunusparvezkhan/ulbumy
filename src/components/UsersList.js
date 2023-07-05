@@ -4,6 +4,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import SkeletonLoader from './SkeletonLoader';
 import Button from './Button'
 
+import netErrGif from '../media/videos/3097-network-error.gif';
+
 const UsersList = () => {
 
     const [laodingUsers, setLoadingUsers] = useState(false);
@@ -12,7 +14,7 @@ const UsersList = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        setLoadingUsers(true)
+        setLoadingUsers(true);
         dispatch(fetchUsers())
             .unwrap()
             .catch((err) => {
@@ -20,7 +22,7 @@ const UsersList = () => {
             })
             .finally(() => {
                 setLoadingUsers(false);
-            })
+            });
     }, [dispatch])
 
     const { data } = useSelector((state) => {
@@ -39,6 +41,18 @@ const UsersList = () => {
         dispatch(addUser());
     }
 
+    const renderErr = () => {
+        return (
+            <div className='err-container p-20 flex flex-col items-center '>
+                {/* <iframe src="https://embed.lottiefiles.com/animation/3097" className='mb-5 neterrgif' title='Network Erorr' /> */}
+                {/* <iframe src="https://embed.lottiefiles.com/animation/99345" className='neterrgif mb-5' title='Network Erorr'></iframe> */}
+                {/* <iframe src="https://embed.lottiefiles.com/animation/98284" className='neterrgif mb-5' title='Network Erorr'></iframe> */}
+                <iframe src="https://embed.lottiefiles.com/animation/90333" className='neterrgif mb-5' title='Network Erorr'></iframe>
+                <label className='text-4xl font-light' >{loadingUsersErr + " :("}</label>
+            </div >
+        )
+    }
+
     return (
         <div>
             <div className='flex flex-row justify-between m-3 items-center' >
@@ -47,9 +61,7 @@ const UsersList = () => {
             </div>
             <div>
                 {laodingUsers ? <SkeletonLoader times={5} heightNwidth='h-10 w-full' /> : renderUsers}
-                <div className='err-container p-20 '>
-                    <label className='text-4xl font-light' >{loadingUsersErr ? loadingUsersErr + " :(" : ''}</label>
-                </div>
+                {loadingUsersErr ? renderErr() : ''}
             </div>
         </div>
     )

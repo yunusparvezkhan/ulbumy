@@ -21,3 +21,8 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+.neterrgif {
+    width: 500px;
+    height: 500px;
+}
