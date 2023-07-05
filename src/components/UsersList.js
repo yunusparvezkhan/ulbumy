@@ -29,8 +29,8 @@ const UsersList = () => {
 
     const renderUsers = data.map((user) => {
         return (
-            <div className='mb-2 bg-20 rounded '>
-                <div key={user.id} className='flex p-2 justify-between items-center cursor-pointer'>{user.name}</div>
+            <div key={user.id} className='mb-2 bg-20 rounded '>
+                <div className='flex p-2 justify-between items-center cursor-pointer'>{user.name}</div>
             </div>
         )
     })
