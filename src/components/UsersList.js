@@ -41,7 +41,8 @@ const UsersList = () => {
                 <iframe src="https://embed.lottiefiles.com/animation/99345" className='neterrgif' title='Network Erorr'></iframe>
                 {/* <iframe src="https://embed.lottiefiles.com/animation/98284" className='neterrgif' title='Network Erorr'></iframe> */}
                 {/* <iframe src="https://embed.lottiefiles.com/animation/90333" className='neterrgif' title='Network Erorr'></iframe> */}
-                <label className='text-4xl font-light' >{loadingUsersErr + " :("}</label>
+                <label className='text-4xl font-light' >{loadingUsersErr}</label>
+                <label className='text-8xl mt-5' >{`:(`}</label>
             </div >
         )
     }
