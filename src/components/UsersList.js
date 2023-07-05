@@ -35,14 +35,6 @@ const UsersList = () => {
         )
     })
 
-    const renderError = () => {
-        return (
-            <div>
-                <label>{loadingUsersErr}</label>
-            </div>
-        )
-    }
-
     const handleAddUser = () => {
         dispatch(addUser());
     }
@@ -55,7 +47,9 @@ const UsersList = () => {
             </div>
             <div>
                 {laodingUsers ? <SkeletonLoader times={5} heightNwidth='h-10 w-full' /> : renderUsers}
-                {loadingUsersErr ? renderError() : ''}
+                <div className='err-container p-20 '>
+                    <label className='text-4xl font-light' >{loadingUsersErr ? loadingUsersErr + " :(" : ''}</label>
+                </div>
             </div>
         </div>
     )
