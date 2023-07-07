@@ -3,11 +3,17 @@ import { fetchUsers, addUser } from '../store';
 import { useSelector, useDispatch } from 'react-redux';
 import SkeletonLoader from './SkeletonLoader';
 import Button from './Button'
+import useThunkOperator from '../hooks/use-thunk';
 
 const UsersList = () => {
 
-    const [laodingUsers, setLoadingUsers] = useState(false);
-    const [loadingUsersErr, setLoadingUsersErr] = useState(null);
+    // This method was previously used for loading screen awaiting for thunk to complete data fetching--//
+    // ------------------------------------------------------------------------------------------------//
+    // const [laodingUsers, setLoadingUsers] = useState(false);                                       //
+    // const [loadingUsersErr, setLoadingUsersErr] = useState(null);                                 //
+    // ---------------------------------------------------------------------------------------------//
+
+    const [doFetchUsers, loadingUsers, loadingUsersErr] = useThunkOperator(fetchUsers);
 
     const [isCreatingUser, setIsCreatingUser] = useState(false);
     const [isCreatingUserErr, setIsCreatingUserErr] = useState(null);
@@ -15,11 +21,8 @@ const UsersList = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        setLoadingUsers(true);
-        dispatch(fetchUsers())
-            .unwrap().catch((err) => setLoadingUsersErr(err.message))
-            .finally(() => setLoadingUsers(false));
-    }, [dispatch])
+        doFetchUsers();
+    }, [doFetchUsers])
 
     const { data } = useSelector((state) => {
         return state.users;
@@ -80,7 +83,7 @@ const UsersList = () => {
             </div>
 
             <div>
-                {laodingUsers ? <SkeletonLoader times={5} heightNwidth='h-10 w-full' /> : renderUsers}
+                {loadingUsers ? <SkeletonLoader times={5} heightNwidth='h-10 w-full' /> : renderUsers}
                 {loadingUsersErr ? renderErr() : ''}
             </div>
         </div>
