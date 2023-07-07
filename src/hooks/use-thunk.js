@@ -11,7 +11,7 @@ const useThunkOperator = (thunk) => {
         setIsLoading(true);
         dispatch(thunk())
             .unwrap()
-            .catch(err => setError(err))
+            .catch(err => setError(err.message))
             .finally(() => setIsLoading(false));
     }, [dispatch, thunk]);
 
