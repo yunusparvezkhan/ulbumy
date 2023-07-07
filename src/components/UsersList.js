@@ -6,13 +6,6 @@ import Button from './Button'
 import useThunkOperator from '../hooks/use-thunk';
 
 const UsersList = () => {
-
-    // This method was previously used for loading screen awaiting for thunk to complete data fetching--//
-    // ------------------------------------------------------------------------------------------------//
-    // const [laodingUsers, setLoadingUsers] = useState(false);                                       //
-    // const [loadingUsersErr, setLoadingUsersErr] = useState(null);                                 //
-    // ---------------------------------------------------------------------------------------------//
-
     const [doFetchUsers, loadingUsers, loadingUsersErr] = useThunkOperator(fetchUsers);
 
     const [isCreatingUser, setIsCreatingUser] = useState(false);
