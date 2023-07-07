@@ -8,6 +8,7 @@ const useThunkOperator = (thunk) => {
     const dispatch = useDispatch();
 
     const runThunk = useCallback(() => {
+        setIsLoading(true);
         dispatch(thunk())
             .unwrap()
             .catch(err => setError(err))
