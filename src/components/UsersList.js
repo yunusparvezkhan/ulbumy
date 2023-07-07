@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { fetchUsers, addUser } from '../store';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import SkeletonLoader from './SkeletonLoader';
 import Button from './Button'
 import useThunkOperator from '../hooks/use-thunk';
@@ -8,13 +8,6 @@ import useThunkOperator from '../hooks/use-thunk';
 const UsersList = () => {
     const [doFetchUsers, loadingUsers, loadingUsersErr] = useThunkOperator(fetchUsers);
     const [doAddUsers, isCreatingUser, isCreatingUserErr] = useThunkOperator(addUser);
-
-    // This method was used for loading screen of Add User button, and to show error if any __//
-    // --------------------------------------------------------------------------------------//
-    // const [isCreatingUser, setIsCreatingUser] = useState(false);                         //
-    // const [isCreatingUserErr, setIsCreatingUserErr] = useState(null);                   //
-    // const dispatch = useDispatch();                                                    //
-    // ----------------------------------------------------------------------------------//
 
     useEffect(() => {
         doFetchUsers();
