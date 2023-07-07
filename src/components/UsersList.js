@@ -7,19 +7,22 @@ import useThunkOperator from '../hooks/use-thunk';
 
 const UsersList = () => {
     const [doFetchUsers, loadingUsers, loadingUsersErr] = useThunkOperator(fetchUsers);
+    const [doAddUsers, isCreatingUser, isCreatingUserErr] = useThunkOperator(addUser);
 
-    const [isCreatingUser, setIsCreatingUser] = useState(false);
-    const [isCreatingUserErr, setIsCreatingUserErr] = useState(null);
-
-    const dispatch = useDispatch();
+    // This method was used for loading screen of Add User button, and to show error if any __//
+    // --------------------------------------------------------------------------------------//
+    // const [isCreatingUser, setIsCreatingUser] = useState(false);                         //
+    // const [isCreatingUserErr, setIsCreatingUserErr] = useState(null);                   //
+    // const dispatch = useDispatch();                                                    //
+    // ----------------------------------------------------------------------------------//
 
     useEffect(() => {
         doFetchUsers();
-    }, [doFetchUsers])
+    }, [doFetchUsers]);
 
     const { data } = useSelector((state) => {
         return state.users;
-    })
+    });
 
     const renderUsers = data.map((user) => {
         return (
@@ -27,15 +30,10 @@ const UsersList = () => {
                 <div className='flex p-2 justify-between items-center cursor-pointer'>{user.name}</div>
             </div>
         )
-    })
+    });
 
     const handleAddUser = () => {
-        setIsCreatingUser(true);
-        setIsCreatingUserErr(null);
-        dispatch(addUser())
-            .unwrap()
-            .catch((err) => setIsCreatingUserErr(err.message))
-            .finally(() => setIsCreatingUser(false));
+        doAddUsers();
     }
 
     const renderAddUserBtn = () => {
