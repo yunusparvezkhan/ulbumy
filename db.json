@@ -1,50 +1,5 @@
 {
-  "users": [
-    {
-      "name": "Lionel Price V",
-      "id": 1
-    },
-    {
-      "name": "Benjamin Tillman",
-      "id": 2
-    },
-    {
-      "name": "Sherri Jones",
-      "id": 3
-    },
-    {
-      "name": "Blanca Grimes",
-      "id": 4
-    },
-    {
-      "name": "Louise Ziemann",
-      "id": 5
-    },
-    {
-      "name": "Noah Hilll",
-      "id": 6
-    },
-    {
-      "name": "Benny Medhurst",
-      "id": 7
-    },
-    {
-      "name": "Maurice Kautzer",
-      "id": 8
-    },
-    {
-      "name": "Don Heathcote",
-      "id": 9
-    },
-    {
-      "name": "Jesus Johnston",
-      "id": 10
-    },
-    {
-      "name": "Iris Bins",
-      "id": 11
-    }
-  ],
+  "users": [],
   "albums": [],
   "photos": []
 }

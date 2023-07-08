@@ -21,7 +21,11 @@ const usersSlice = createSlice({
 
         // Reducer for deleteUser Thunk
         builder.addCase(deleteUser.fulfilled, (state, action) => {
-            // Update data array with new dataset withdrawing the intended user to be deleted
+            const updated = state.data.filter((user) => {
+                return user.id !== action.payload.id
+            })
+
+            state.data = updated;
         })
     }
 })
