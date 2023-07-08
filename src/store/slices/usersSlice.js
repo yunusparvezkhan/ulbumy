@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { fetchUsers } from "../thunks/fetchUsers";
 import { addUser } from "../thunks/addUser";
+import { deleteUser } from "../thunks/deleteUser";
 
 const usersSlice = createSlice({
     name: "users",
@@ -17,6 +18,11 @@ const usersSlice = createSlice({
         builder.addCase(addUser.fulfilled, (state, action) => {
             state.data.push(action.payload);
         });
+
+        // Reducer for deleteUser Thunk
+        builder.addCase(deleteUser.fulfilled, (state, action) => {
+            // Update data array with new dataset withdrawing the intended user to be deleted
+        })
     }
 })
 
