@@ -50,7 +50,7 @@ const UsersList = () => {
 
     const renderUsers = data.map((user) => {
         return (
-            <UsersListItem user={user} />
+            <UsersListItem key={user.id} user={user} />
         )
     });
 
