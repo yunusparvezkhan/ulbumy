@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import SkeletonLoader from './SkeletonLoader';
 import Button from './Button'
 import useThunkOperator from '../hooks/use-thunk';
+import UsersListItem from './UsersListItem';
 
 const UsersList = () => {
     const [doFetchUsers, loadingUsers, loadingUsersErr] = useThunkOperator(fetchUsers);
@@ -15,14 +16,6 @@ const UsersList = () => {
 
     const { data } = useSelector((state) => {
         return state.users;
-    });
-
-    const renderUsers = data.map((user) => {
-        return (
-            <div key={user.id} className='mb-2 bg-20 rounded '>
-                <div className='flex p-2 justify-between items-center cursor-pointer'>{user.name}</div>
-            </div>
-        )
     });
 
     const handleAddUser = () => {
@@ -54,6 +47,12 @@ const UsersList = () => {
             </div >
         )
     }
+
+    const renderUsers = data.map((user) => {
+        return (
+            <UsersListItem user={user} />
+        )
+    });
 
     return (
         <div>
