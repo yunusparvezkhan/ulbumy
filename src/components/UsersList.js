@@ -7,7 +7,7 @@ import useThunkOperator from '../hooks/use-thunk';
 
 const UsersList = () => {
     const [doFetchUsers, loadingUsers, loadingUsersErr] = useThunkOperator(fetchUsers);
-    const [doAddUsers, isCreatingUser, isCreatingUserErr] = useThunkOperator(addUser);
+    const [doCreateUsers, isCreatingUser, isCreatingUserErr] = useThunkOperator(addUser);
 
     useEffect(() => {
         doFetchUsers();
@@ -26,7 +26,7 @@ const UsersList = () => {
     });
 
     const handleAddUser = () => {
-        doAddUsers();
+        doCreateUsers();
     }
 
     const renderAddUserBtn = () => {
