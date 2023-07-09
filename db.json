@@ -1,20 +1,16 @@
 {
   "users": [
     {
-      "name": "Otis Rohan",
+      "name": "Miss Jill Gislason",
       "id": 1
     },
     {
-      "name": "Jordan Gerhold II",
+      "name": "Bernadette Rice V",
       "id": 2
     },
     {
-      "name": "Sean Boehm",
-      "id": 12
-    },
-    {
-      "name": "Ismael Towne",
-      "id": 13
+      "name": "Willis Windler",
+      "id": 3
     }
   ],
   "albums": [],
