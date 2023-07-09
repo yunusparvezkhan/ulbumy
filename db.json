@@ -1,5 +1,42 @@
 {
-  "users": [],
+  "users": [
+    {
+      "name": "Spencer Smith",
+      "id": 2
+    },
+    {
+      "name": "Gilberto Mayert",
+      "id": 3
+    },
+    {
+      "name": "Delores Conn",
+      "id": 4
+    },
+    {
+      "name": "Merle Hagenes",
+      "id": 5
+    },
+    {
+      "name": "Benny Dach",
+      "id": 8
+    },
+    {
+      "name": "Miss Gwen Turner",
+      "id": 9
+    },
+    {
+      "name": "Deanna Cole",
+      "id": 10
+    },
+    {
+      "name": "Jenna Price",
+      "id": 11
+    },
+    {
+      "name": "Mrs. Ora Hodkiewicz II",
+      "id": 12
+    }
+  ],
   "albums": [],
   "photos": []
 }

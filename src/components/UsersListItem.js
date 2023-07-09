@@ -3,6 +3,7 @@ import { GoTrash } from 'react-icons/go';
 import Button from './Button';
 import { deleteUser } from '../store';
 import useThunkOperator from '../hooks/use-thunk';
+import ExpandablePanel from './ExpandablePanel';
 
 const UsersListItem = ({ user }) => {
     const [doDeleteUser, isLoading, error] = useThunkOperator(deleteUser);
@@ -12,7 +13,7 @@ const UsersListItem = ({ user }) => {
             return (
                 <div className='flex flex-row items-center' >
                     <Button className="bg-gray-700 text-gray-400 border-gray-400" >
-                        <iframe src="https://embed.lottiefiles.com/animation/98432" width="15px" height="20px" title='Adding a user' ></iframe>
+                        <iframe src="https://embed.lottiefiles.com/animation/98432" width="15px" height="20px" title='Deleting a user' ></iframe>
                     </Button>
                 </div>
             )
@@ -25,12 +26,19 @@ const UsersListItem = ({ user }) => {
         }
     }
 
+    const header =
+        <>
+            <div className='mb-2 bg-20 rounded flex flex-row'>
+                {renderButton()}
+                {error && <div>Error Deleting User</div>}
+                <div className='flex p-2 justify-between items-center'>{user.name}</div>
+            </div>
+        </>
+
     return (
-        <div className='mb-2 bg-20 rounded flex flex-row'>
-            {renderButton()}
-            {error && <div>Error Deleting User</div>}
-            <div className='flex p-2 justify-between items-center cursor-pointer'>{user.name}</div>
-        </div>
+        <ExpandablePanel header={header}>
+            CONTENT !!
+        </ExpandablePanel>
     )
 }
 
