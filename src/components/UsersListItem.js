@@ -4,6 +4,7 @@ import Button from './Button';
 import { deleteUser } from '../store';
 import useThunkOperator from '../hooks/use-thunk';
 import ExpandablePanel from './ExpandablePanel';
+import AlbumsList from './AlbumsList';
 
 const UsersListItem = ({ user }) => {
     const [doDeleteUser, isLoading, error] = useThunkOperator(deleteUser);
@@ -37,7 +38,9 @@ const UsersListItem = ({ user }) => {
 
     return (
         <ExpandablePanel header={header}>
-            CONTENT !!
+            <div className='ml-12' >
+                <AlbumsList user={user} />
+            </div>
         </ExpandablePanel>
     )
 }
