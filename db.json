@@ -13,6 +13,22 @@
       "id": 3
     }
   ],
-  "albums": [],
+  "albums": [
+    {
+      "name": "Album 1",
+      "userId": 1,
+      "id": 1
+    },
+    {
+      "name": "Album 2",
+      "userId": 1,
+      "id": 2
+    },
+    {
+      "name": "Album 2",
+      "userId": 1,
+      "id": 2
+    }
+  ],
   "photos": []
 }
