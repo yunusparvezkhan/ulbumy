@@ -21,9 +21,7 @@ const ExpandablePanel = ({ header, bgcolor, children }) => {
                     </Button>
                 </div>
             </div>
-            <div className={`p-2 ${expanded ? '' : 'hidden'}`}>
-                {children}
-            </div>
+            {expanded && <div className='p-2'>{children}</div>}
         </div>
     )
 }

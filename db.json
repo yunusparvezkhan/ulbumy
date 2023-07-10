@@ -5,16 +5,20 @@
       "id": 1
     },
     {
-      "name": "Pauline Hayes",
-      "id": 2
-    },
-    {
       "name": "Aubrey Robel",
       "id": 3
     },
     {
       "name": "Sam Kuvalis",
       "id": 4
+    },
+    {
+      "name": "Bradley Cole",
+      "id": 5
+    },
+    {
+      "name": "Tyler Nitzsche",
+      "id": 6
     }
   ],
   "albums": [
@@ -34,19 +38,9 @@
       "id": 4
     },
     {
-      "name": "Album xyz",
-      "userId": 1,
+      "name": "Album s",
+      "userId": 6,
       "id": 5
-    },
-    {
-      "name": "Album xyz",
-      "userId": 2,
-      "id": 6
-    },
-    {
-      "name": "Album xyz",
-      "userId": 2,
-      "id": 7
     }
   ],
   "photos": []
