@@ -1,42 +1,30 @@
 import React from 'react';
 import { useFetchAlbumsQuery } from '../store';
 import AlbumListItem from './AlbumListItem';
+import SkeletonLoader from './SkeletonLoader';
 
 const AlbumsList = ({ user }) => {
     const { data, error, isLoading } = useFetchAlbumsQuery(user);
 
+    let renderAlbums = null;
+
     if (!isLoading && !error) {
-        const renderAlbums = data.map((album) => {
+        renderAlbums = data.map((album) => {
             return (
                 <AlbumListItem album={album} key={album.id} />
             )
         })
+    }
 
-        return (
-            <div>
-                Albums
-                <div className='flex flex-row'>
-                    {renderAlbums}
-                </div>
-            </div>
-        )
-    } else if (!error) {
-        return (
-            <div>
-                Albums
-                <div className='p-5 items-center flex flex-col' >
-                    Loading...
-                </div>
-            </div>
-        )
-    } else {
+    // component return
+    return (
         <div>
             Albums
-            <div className='p-5 items-center flex flex-col'>
-                Error: {error}
+            <div>
+                {isLoading ? <SkeletonLoader times={3} heightNwidth="h-16 w-full" /> : error ? error.status + ' || ' + error.error : renderAlbums}
             </div>
         </div>
-    }
+    )
 }
 
 export default AlbumsList

@@ -2,7 +2,7 @@ import React from 'react'
 
 const AlbumListItem = ({ album }) => {
     return (
-        <div className='p-10 m-3 bg-gray-700'>
+        <div className='p-3 my-3 rounded bg-40'>
             <span>{album.name}</span>
         </div>
     )

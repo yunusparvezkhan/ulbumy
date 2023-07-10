@@ -66,7 +66,7 @@ const UsersList = () => {
             </div>
 
             <div>
-                {loadingUsers ? <SkeletonLoader times={5} heightNwidth='h-10 w-full' /> : renderUsers}
+                {loadingUsers ? <SkeletonLoader times={5} heightNwidth='h-16 w-full' /> : renderUsers}
                 {loadingUsersErr ? renderErr() : ''}
             </div>
         </div>
