@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Button from './Button';
 import { GoChevronDown, GoChevronUp } from 'react-icons/go';
 
-const ExpandablePanel = ({ header, children }) => {
+const ExpandablePanel = ({ header, bgcolor, children }) => {
     const [expanded, setExpanded] = useState(false);
 
     const handleToggle = () => {
@@ -10,7 +10,7 @@ const ExpandablePanel = ({ header, children }) => {
     }
 
     return (
-        <div className='mb-2 bg-20 rounded'>
+        <div className={`my-2 ${bgcolor} rounded`}>
             <div className='flex p-2 justify-between items-center'>
                 <div className='flex flex-row items-center justify-between'>
                     {header}

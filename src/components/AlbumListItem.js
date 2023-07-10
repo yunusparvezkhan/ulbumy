@@ -1,10 +1,19 @@
 import React from 'react'
+import ExpandablePanel from './ExpandablePanel'
 
 const AlbumListItem = ({ album }) => {
+
+    const header =
+        <>
+            <div className='rounded'>
+                <div className='p-1 text-sm' >{album.name}</div>
+            </div>
+        </>
+
     return (
-        <div className='p-3 my-3 rounded bg-40'>
-            <span>{album.name}</span>
-        </div>
+        <ExpandablePanel header={header} bgcolor='bg-40' >
+            <label className='text-sm' >CONTENT !!!</label>
+        </ExpandablePanel>
     )
 }
 

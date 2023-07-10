@@ -37,7 +37,7 @@ const UsersListItem = ({ user }) => {
         </>
 
     return (
-        <ExpandablePanel header={header}>
+        <ExpandablePanel header={header} bgcolor='bg-20' >
             <div className='mx-12' >
                 <AlbumsList user={user} />
             </div>
