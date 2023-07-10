@@ -1,46 +1,52 @@
 {
   "users": [
     {
-      "name": "Miss Jill Gislason",
+      "name": "Yunus Parvez Khan",
       "id": 1
     },
     {
-      "name": "Bernadette Rice V",
+      "name": "Pauline Hayes",
       "id": 2
     },
     {
-      "name": "Willis Windler",
+      "name": "Aubrey Robel",
       "id": 3
     },
     {
-      "name": "Alex Crooks",
+      "name": "Sam Kuvalis",
       "id": 4
-    },
-    {
-      "name": "Jean Hand",
-      "id": 5
     }
   ],
   "albums": [
     {
-      "name": "Album 1",
+      "name": "Album xyz",
       "userId": 1,
       "id": 1
     },
     {
-      "name": "Album 2",
+      "name": "Album xyz",
       "userId": 1,
       "id": 2
     },
     {
-      "name": "Album 3",
+      "name": "Album xyz",
       "userId": 1,
-      "id": 3
+      "id": 4
     },
     {
-      "name": "Album 3",
-      "userId": 3,
-      "id": 3
+      "name": "Album xyz",
+      "userId": 1,
+      "id": 5
+    },
+    {
+      "name": "Album xyz",
+      "userId": 2,
+      "id": 6
+    },
+    {
+      "name": "Album xyz",
+      "userId": 2,
+      "id": 7
     }
   ],
   "photos": []
