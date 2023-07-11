@@ -6,7 +6,7 @@ import Button from './Button';
 
 const AlbumsList = ({ user }) => {
     const { data, error, isLoading } = useFetchAlbumsQuery(user);
-    const [createAlbum] = useCreateAlbumMutation();
+    const [createAlbum, result] = useCreateAlbumMutation();
 
     let renderAlbums;
 
@@ -14,8 +14,10 @@ const AlbumsList = ({ user }) => {
         createAlbum(user);
     }
 
+    console.log(result);
+
     const renderAddAlbumBtn = () => {
-        if (isLoading) {
+        if (result.isLoading) {
             return (
                 <div className='flex flex-row items-center' >
                     <iframe src="https://embed.lottiefiles.com/animation/98432" width="35px" height="35px" className='mr-3' title='Adding a user' ></iframe>
@@ -43,6 +45,10 @@ const AlbumsList = ({ user }) => {
                 <div className="text-sm" >
                     {renderAddAlbumBtn()}
                 </div>
+            </div>
+
+            <div className='mb-3' >
+                {result.error && <p className='text-red-500 text-right ' >{result.error}</p>}
             </div>
 
             <div>
