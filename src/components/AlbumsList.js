@@ -52,7 +52,12 @@ const AlbumsList = ({ user }) => {
             </div>
 
             <div>
-                {isLoading ? <SkeletonLoader times={3} heightNwidth="h-14 w-full" /> : error ? error.status + ' || ' + error.error : renderAlbums}
+                {
+                    isLoading ?
+                        <SkeletonLoader times={3} heightNwidth="h-14 w-full" />
+                        : error ? error.status + ' || ' + error.error
+                            : renderAlbums
+                }
             </div>
         </div>
     )

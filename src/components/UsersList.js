@@ -5,6 +5,7 @@ import SkeletonLoader from './SkeletonLoader';
 import Button from './Button'
 import useThunkOperator from '../hooks/use-thunk';
 import UsersListItem from './UsersListItem';
+import ErrorScreen from './ErrorScreen';
 
 const UsersList = () => {
     const [doFetchUsers, loadingUsers, loadingUsersErr] = useThunkOperator(fetchUsers);
@@ -35,19 +36,6 @@ const UsersList = () => {
         }
     }
 
-    const renderErr = () => {
-        return (
-            <div className='err-container p-20 flex flex-col items-center '>
-                {/* <iframe src="https://embed.lottiefiles.com/animation/3097" className='neterrgif' title='Network Erorr' /> */}
-                {/* <iframe src="https://embed.lottiefiles.com/animation/99345" className='neterrgif' title='Network Erorr'></iframe> */}
-                {/* <iframe src="https://embed.lottiefiles.com/animation/98284" className='neterrgif' title='Network Erorr'></iframe> */}
-                <iframe src="https://embed.lottiefiles.com/animation/90333" className='neterrgif' title='Network Erorr'></iframe>
-                <label className='text-4xl font-light' >{loadingUsersErr}</label>
-                <label className='text-8xl mt-5' >{`:(`}</label>
-            </div >
-        )
-    }
-
     const renderUsers = data.map((user) => {
         return (
             <UsersListItem key={user.id} user={user} />
@@ -67,7 +55,7 @@ const UsersList = () => {
 
             <div>
                 {loadingUsers ? <SkeletonLoader times={5} heightNwidth='h-16 w-full' /> : renderUsers}
-                {loadingUsersErr ? renderErr() : ''}
+                {loadingUsersErr ? <ErrorScreen errorMessage={loadingUsersErr} /> : ''}
             </div>
         </div>
     )
