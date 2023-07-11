@@ -1,30 +1,14 @@
 {
   "users": [
     {
-      "name": "Yunus Parvez Khan",
+      "name": "Bobby Cummerata IV",
       "id": 1
-    },
-    {
-      "name": "Aubrey Robel",
-      "id": 3
-    },
-    {
-      "name": "Sam Kuvalis",
-      "id": 4
-    },
-    {
-      "name": "Bradley Cole",
-      "id": 5
-    },
-    {
-      "name": "Tyler Nitzsche",
-      "id": 6
     }
   ],
   "albums": [
     {
       "userId": 1,
-      "name": "Incredible Wooden Tuna",
+      "name": "generate",
       "id": 1
     }
   ],
