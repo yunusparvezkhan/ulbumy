@@ -3,6 +3,7 @@ import { useCreateAlbumMutation, useFetchAlbumsQuery } from '../store';
 import AlbumListItem from './AlbumListItem';
 import SkeletonLoader from './SkeletonLoader';
 import Button from './Button';
+import ErrorScreen from './ErrorScreen';
 
 const AlbumsList = ({ user }) => {
     const { data, error, isLoading } = useFetchAlbumsQuery(user);
@@ -13,8 +14,6 @@ const AlbumsList = ({ user }) => {
     const handleAddAlbum = () => {
         createAlbum(user);
     }
-
-    console.log(result);
 
     const renderAddAlbumBtn = () => {
         if (result.isLoading) {
@@ -55,7 +54,15 @@ const AlbumsList = ({ user }) => {
                 {
                     isLoading ?
                         <SkeletonLoader times={3} heightNwidth="h-14 w-full" />
-                        : error ? error.status + ' || ' + error.error
+                        : error ?
+                            <ErrorScreen
+                                errorMessage={error.status + ' || ' + error.error}
+                                gifw='300px'
+                                gifh='300px'
+                                msgs='text-3xl'
+                                exps='text-6xl'
+                                ustomStyle='album-err-container'
+                            />
                             : renderAlbums
                 }
             </div>
@@ -63,4 +70,4 @@ const AlbumsList = ({ user }) => {
     )
 }
 
-export default AlbumsList
+export default AlbumsList;

@@ -55,7 +55,7 @@ const UsersList = () => {
 
             <div>
                 {loadingUsers ? <SkeletonLoader times={5} heightNwidth='h-16 w-full' /> : renderUsers}
-                {loadingUsersErr ? <ErrorScreen errorMessage={loadingUsersErr} /> : ''}
+                {loadingUsersErr ? <ErrorScreen errorMessage={loadingUsersErr} gifw='500px' gifh='500px' msgs='text-5xl' exps='text-8xl' customStyle='err-container' /> : ''}
             </div>
         </div>
     )

@@ -1,14 +1,14 @@
 import React from 'react'
 
-const ErrorScreen = ({ errorMessage }) => {
+const ErrorScreen = ({ errorMessage, gifw, gifh, msgs, exps, customStyle }) => {
     return (
-        <div className='err-container p-20 flex flex-col items-center '>
-            {/* <iframe src="https://embed.lottiefiles.com/animation/3097" className='neterrgif' title='Network Erorr' /> */}
-            {/* <iframe src="https://embed.lottiefiles.com/animation/99345" className='neterrgif' title='Network Erorr'></iframe> */}
-            {/* <iframe src="https://embed.lottiefiles.com/animation/98284" className='neterrgif' title='Network Erorr'></iframe> */}
-            <iframe src="https://embed.lottiefiles.com/animation/90333" className='neterrgif' title='Network Erorr'></iframe>
-            <label className='text-4xl font-light' >{errorMessage}</label>
-            <label className='text-8xl mt-5' >{`:(`}</label>
+        <div className={`p-20 flex flex-col items-center ${customStyle}`}>
+            {/* <iframe src="https://embed.lottiefiles.com/animation/3097" width={gifw} height={gifh} title='Network Erorr' /> */}
+            {/* <iframe src="https://embed.lottiefiles.com/animation/99345" width={gifw} height={gifh} title='Network Erorr'></iframe> */}
+            {/* <iframe src="https://embed.lottiefiles.com/animation/98284" width={gifw} height={gifh} title='Network Erorr'></iframe> */}
+            <iframe src="https://embed.lottiefiles.com/animation/90333" width={gifw} height={gifh} title='Network Erorr'></iframe>
+            <label className={`${msgs} font-light`} >{errorMessage}</label>
+            <label className={`${exps} mt-5`} >{`:(`}</label>
         </div >
     )
 }

@@ -23,89 +23,9 @@
   ],
   "albums": [
     {
-      "name": "Album xyz",
       "userId": 1,
+      "name": "Incredible Wooden Tuna",
       "id": 1
-    },
-    {
-      "name": "Album xyz",
-      "userId": 1,
-      "id": 2
-    },
-    {
-      "name": "Album xyz",
-      "userId": 1,
-      "id": 4
-    },
-    {
-      "name": "Album s",
-      "userId": 6,
-      "id": 5
-    },
-    {
-      "userId": 1,
-      "name": "Handcrafted Cotton Soap",
-      "id": 6
-    },
-    {
-      "userId": 1,
-      "name": "Handmade Cotton Fish",
-      "id": 7
-    },
-    {
-      "userId": 1,
-      "name": "Luxurious Fresh Pants",
-      "id": 8
-    },
-    {
-      "userId": 1,
-      "name": "Gorgeous Rubber Fish",
-      "id": 9
-    },
-    {
-      "userId": 1,
-      "name": "Bespoke Bronze Car",
-      "id": 10
-    },
-    {
-      "userId": 1,
-      "name": "Licensed Rubber Hat",
-      "id": 11
-    },
-    {
-      "userId": 1,
-      "name": "Awesome Bronze Shoes",
-      "id": 12
-    },
-    {
-      "userId": 3,
-      "name": "Practical Metal Pants",
-      "id": 13
-    },
-    {
-      "userId": 3,
-      "name": "Luxurious Granite Cheese",
-      "id": 14
-    },
-    {
-      "userId": 3,
-      "name": "Sleek Bronze Bike",
-      "id": 15
-    },
-    {
-      "userId": 3,
-      "name": "Electronic Concrete Sausages",
-      "id": 16
-    },
-    {
-      "userId": 4,
-      "name": "Handmade Soft Hat",
-      "id": 17
-    },
-    {
-      "userId": 4,
-      "name": "Refined Wooden Car",
-      "id": 18
     }
   ],
   "photos": []
