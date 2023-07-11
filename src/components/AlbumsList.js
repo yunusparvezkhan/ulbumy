@@ -1,16 +1,17 @@
 import React from 'react';
-import { useFetchAlbumsQuery } from '../store';
+import { useCreateAlbumMutation, useFetchAlbumsQuery } from '../store';
 import AlbumListItem from './AlbumListItem';
 import SkeletonLoader from './SkeletonLoader';
 import Button from './Button';
 
 const AlbumsList = ({ user }) => {
     const { data, error, isLoading } = useFetchAlbumsQuery(user);
+    const [createAlbum] = useCreateAlbumMutation();
 
-    let renderAlbums = null;
+    let renderAlbums;
 
     const handleAddAlbum = () => {
-        console.log("Add Album Request inside " + user.name);
+        createAlbum(user);
     }
 
     const renderAddAlbumBtn = () => {
