@@ -13,7 +13,6 @@ const addUser = createAsyncThunk('users/add', async () => {
 });
 
 // Development phase functions
-
 const pause = (duration) => {
     return new Promise((resolve) => {
         setTimeout(resolve, duration);
