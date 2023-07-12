@@ -1,29 +1,34 @@
 {
   "users": [
     {
-      "name": "Wade Franecki",
+      "name": "Florence Haag",
       "id": 1
     },
     {
-      "name": "Miss Angelina Hahn IV",
+      "name": "Stuart Ziemann",
       "id": 2
     }
   ],
   "albums": [
     {
-      "userId": 2,
-      "name": "copy",
+      "userId": 1,
+      "name": "reboot",
       "id": 4
     },
     {
-      "userId": 2,
-      "name": "calculate",
+      "userId": 1,
+      "name": "copy",
       "id": 5
     },
     {
-      "userId": 2,
-      "name": "reboot",
+      "userId": 1,
+      "name": "hack",
       "id": 6
+    },
+    {
+      "userId": 1,
+      "name": "program",
+      "id": 7
     }
   ],
   "photos": []

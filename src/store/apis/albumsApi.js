@@ -15,7 +15,7 @@ const albumsApi = createApi({
 
         // Dev Only
         fetchFn: async (...args) => {
-            await pause(0);
+            await pause(300);
             return fetch(...args);
         }
     }),
