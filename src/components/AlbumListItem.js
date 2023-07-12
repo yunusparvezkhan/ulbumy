@@ -1,11 +1,14 @@
 import React from 'react'
 import ExpandablePanel from './ExpandablePanel'
 import { GoTrash } from 'react-icons/go'
+import { useRemoveAlbumMutation } from '../store'
 
 const AlbumListItem = ({ album }) => {
+    const [doDelete] = useRemoveAlbumMutation();
 
     const handleDelete = () => {
-        console.log('Deletation request of album - ' + album.name)
+        console.log('Deletation request of album - ' + album.name);
+        doDelete(album)
     }
 
     const header =

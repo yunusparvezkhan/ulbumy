@@ -44,26 +44,6 @@
       "userId": 1,
       "name": "quantify",
       "id": 7
-    },
-    {
-      "userId": 1,
-      "name": "synthesize",
-      "id": 8
-    },
-    {
-      "userId": 1,
-      "name": "override",
-      "id": 9
-    },
-    {
-      "userId": 1,
-      "name": "connect",
-      "id": 10
-    },
-    {
-      "userId": 1,
-      "name": "connect",
-      "id": 11
     }
   ],
   "photos": []
