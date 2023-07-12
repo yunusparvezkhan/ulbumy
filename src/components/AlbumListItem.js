@@ -7,7 +7,6 @@ const AlbumListItem = ({ album }) => {
     const [doDelete] = useRemoveAlbumMutation();
 
     const handleDelete = () => {
-        console.log('Deletation request of album - ' + album.name);
         doDelete(album)
     }
 

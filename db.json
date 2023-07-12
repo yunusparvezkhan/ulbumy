@@ -11,21 +11,6 @@
   ],
   "albums": [
     {
-      "userId": 1,
-      "name": "compress",
-      "id": 1
-    },
-    {
-      "userId": 1,
-      "name": "input",
-      "id": 2
-    },
-    {
-      "userId": 1,
-      "name": "generate",
-      "id": 3
-    },
-    {
       "userId": 2,
       "name": "copy",
       "id": 4
@@ -39,11 +24,6 @@
       "userId": 2,
       "name": "reboot",
       "id": 6
-    },
-    {
-      "userId": 1,
-      "name": "quantify",
-      "id": 7
     }
   ],
   "photos": []
