@@ -1,5 +1,6 @@
 import React from 'react'
 import { useFetchImagesQuery } from '../store'
+import Button from './Button';
 
 const ImageList = ({ album }) => {
     const { data, error, isLoading } = useFetchImagesQuery(album);
@@ -17,9 +18,17 @@ const ImageList = ({ album }) => {
         })
     }
 
+    const handleAddImage = () => {
+        // Add Image
+        console.log('Add Image request from ' + album.name)
+    }
+
     return (
         <div>
-            <label className='text-sm' >Images for album {album.name}</label>
+            <div className='flex flex-row justify-between items-center m-2' >
+                <label className='text-md font-bold' >Images</label>
+                <Button primary onClick={handleAddImage} className='text-sm'  >+ Add Image</Button>
+            </div>
             <div className='flex flex-row items-center'>
                 {imagesArr}
             </div>
