@@ -49,11 +49,26 @@ const ImageList = ({ album }) => {
         createImage(album);
     }
 
+    const renderAddImageBtn = () => {
+        if (result.isLoading) {
+            return (
+                <div className='flex flex-row items-center' >
+                    <iframe src="https://embed.lottiefiles.com/animation/98432" width="35px" height="35px" className='mr-3' title='Adding a image' ></iframe>
+                    <Button className="bg-gray-700 text-gray-400 border-gray-400" >+ Add Image</Button>
+                </div>
+            )
+        } else {
+            return <Button primary onClick={handleAddImage} >+ Add Image</Button>
+        }
+    }
+
     return (
         <div>
             <div className='flex flex-row justify-between items-center m-2' >
                 <label className='text-md font-bold' >Images</label>
-                <Button primary onClick={handleAddImage} className='text-sm'  >+ Add Image</Button>
+                <div className='text-sm'>
+                    {renderAddImageBtn()}
+                </div>
             </div>
 
             <div>

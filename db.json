@@ -219,6 +219,24 @@
       "src": "https://picsum.photos/seed/cWPLMyf/640/480",
       "alt": "Tricycle",
       "id": 24
+    },
+    {
+      "albumId": 1,
+      "src": "https://picsum.photos/seed/lieRrcvr/640/480",
+      "alt": "Fitness Bicycle",
+      "id": 25
+    },
+    {
+      "albumId": 1,
+      "src": "https://picsum.photos/seed/toza2/640/480",
+      "alt": "BMX Bicycle",
+      "id": 26
+    },
+    {
+      "albumId": 1,
+      "src": "https://picsum.photos/seed/zcNAFY/640/480",
+      "alt": "Track/Fixed-Gear Bicycle",
+      "id": 27
     }
   ]
 }
