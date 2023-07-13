@@ -71,6 +71,10 @@ const ImageList = ({ album }) => {
                 </div>
             </div>
 
+            <div className='mb-3' >
+                {result.error && <p className='text-red-500 mr-3 text-right ' >{result.error}</p>}
+            </div>
+
             <div>
                 {renderBody()}
             </div>

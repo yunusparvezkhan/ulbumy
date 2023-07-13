@@ -237,6 +237,18 @@
       "src": "https://picsum.photos/seed/zcNAFY/640/480",
       "alt": "Track/Fixed-Gear Bicycle",
       "id": 27
+    },
+    {
+      "albumId": 1,
+      "src": "https://picsum.photos/seed/yUnJ1/640/480",
+      "alt": "Road Bicycle",
+      "id": 28
+    },
+    {
+      "albumId": 1,
+      "src": "https://picsum.photos/seed/5zp07/640/480",
+      "alt": "BMX Bicycle",
+      "id": 29
     }
   ]
 }
