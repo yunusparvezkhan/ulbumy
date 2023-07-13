@@ -249,6 +249,12 @@
       "src": "https://picsum.photos/seed/5zp07/640/480",
       "alt": "BMX Bicycle",
       "id": 29
+    },
+    {
+      "albumId": 12,
+      "src": "https://picsum.photos/seed/E5aFHh/640/480",
+      "alt": "City Bicycle",
+      "id": 30
     }
   ]
 }
