@@ -8,7 +8,6 @@ const ImageListItem = ({ image }) => {
 
     const handleDelete = () => {
         // Delete
-        console.log('Delete request from image id ' + image.id);
         doDeleteImage(image);
     }
 
