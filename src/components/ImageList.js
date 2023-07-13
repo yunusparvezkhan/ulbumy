@@ -44,8 +44,6 @@ const ImageList = ({ album }) => {
     }
 
     const handleAddImage = () => {
-        // Add Image
-        console.log('Add Image request from ' + album.name);
         createImage(album);
     }
 
