@@ -1,12 +1,15 @@
 import React from 'react'
 import { GoTrash } from 'react-icons/go';
 import Button from './Button';
+import { useDelteImageMutation } from '../store';
 
 const ImageListItem = ({ image }) => {
+    const [doDeleteImage, result] = useDelteImageMutation();
 
     const handleDelete = () => {
         // Delete
-        console.log('Delete request from image id ' + image.id)
+        console.log('Delete request from image id ' + image.id);
+        doDeleteImage(image);
     }
 
     return (

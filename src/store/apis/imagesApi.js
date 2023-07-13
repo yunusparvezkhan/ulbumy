@@ -61,11 +61,27 @@ const imagesApi = createApi({
                         }
                     }
                 }
+            }),
+            delteImage: builder.mutation({
+                invalidatesTags(result, error, image) {
+                    return [
+                        {
+                            tag: 'image',
+                            id: image.albumId
+                        }
+                    ]
+                },
+                query: (image) => {
+                    return {
+                        url: `/images/${image.id}`,
+                        method: 'DELETE'
+                    }
+                }
             })
         }
     }
 })
 
 
-export const { useFetchImagesQuery, useCreateImageMutation } = imagesApi;
+export const { useFetchImagesQuery, useCreateImageMutation, useDelteImageMutation } = imagesApi;
 export { imagesApi };
