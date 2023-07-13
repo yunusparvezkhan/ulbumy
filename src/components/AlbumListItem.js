@@ -37,7 +37,7 @@ const AlbumListItem = ({ album }) => {
 
     return (
         <ExpandablePanel header={header} bgcolor='bg-40' >
-            <div className='ml-9'>
+            <div className='mx-9'>
                 <ImageList album={album} />
             </div>
         </ExpandablePanel>

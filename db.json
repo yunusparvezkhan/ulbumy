@@ -7,6 +7,10 @@
     {
       "name": "Kerry Johnston",
       "id": 2
+    },
+    {
+      "name": "Laurence Murazik",
+      "id": 3
     }
   ],
   "albums": [
@@ -44,6 +48,31 @@
       "userId": 2,
       "name": "connect",
       "id": 7
+    },
+    {
+      "userId": 2,
+      "name": "transmit",
+      "id": 8
+    },
+    {
+      "userId": 1,
+      "name": "program",
+      "id": 9
+    },
+    {
+      "userId": 1,
+      "name": "generate",
+      "id": 10
+    },
+    {
+      "userId": 1,
+      "name": "index",
+      "id": 11
+    },
+    {
+      "userId": 1,
+      "name": "navigate",
+      "id": 12
     }
   ],
   "images": [

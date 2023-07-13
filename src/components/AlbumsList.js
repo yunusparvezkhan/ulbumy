@@ -61,7 +61,7 @@ const AlbumsList = ({ user }) => {
                                 gifh='300px'
                                 msgs='text-3xl'
                                 exps='text-6xl'
-                                ustomStyle='album-err-container'
+                                customStyle='album-err-container'
                             />
                             : renderAlbums
                 }

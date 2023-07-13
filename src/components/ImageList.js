@@ -2,6 +2,8 @@ import React from 'react'
 import { useCreateImageMutation, useFetchImagesQuery } from '../store'
 import Button from './Button';
 import ImageListItem from './ImageListItem';
+import SkeletonLoader from './SkeletonLoader';
+import ErrorScreen from './ErrorScreen';
 
 const ImageList = ({ album }) => {
     const { data, error, isLoading } = useFetchImagesQuery(album);
@@ -13,6 +15,32 @@ const ImageList = ({ album }) => {
         imagesArr = data.map((image) => {
             return <ImageListItem image={image} key={image.id} />
         })
+    }
+
+    const renderBody = () => {
+        if (isLoading) {
+            return (
+                <div className='grid grid-cols-3 grid-flow-row'>
+                    <SkeletonLoader times={3} heightNwidth="h-40 w-40" addlStyle='flex flex-col items-center' />
+                </div>
+            )
+
+        } else if (error) {
+            return (
+                <ErrorScreen errorMessage={error.status + ' || ' + error.error}
+                    gifw='500px'
+                    gifh='300px'
+                    msgs='text-4xl'
+                    exps='text-7xl'
+                    customStyle='album-err-container' />
+            )
+        } else {
+            return (
+                <div className='grid grid-cols-3 grid-flow-row'>
+                    {imagesArr}
+                </div>
+            )
+        }
     }
 
     const handleAddImage = () => {
@@ -27,9 +55,11 @@ const ImageList = ({ album }) => {
                 <label className='text-md font-bold' >Images</label>
                 <Button primary onClick={handleAddImage} className='text-sm'  >+ Add Image</Button>
             </div>
-            <div className='grid grid-cols-3 grid-flow-row'>
-                {imagesArr}
+
+            <div>
+                {renderBody()}
             </div>
+
         </div>
     )
 }

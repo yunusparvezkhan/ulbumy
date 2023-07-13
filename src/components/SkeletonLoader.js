@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import React from 'react'
 
-const SkeletonLoader = ({ times, heightNwidth }) => {
+const SkeletonLoader = ({ times, heightNwidth, addlStyle }) => {
 
     const outerClassNames = classNames(
         'relative', 'overflow-hidden', 'bg-gray-900', 'rounded', 'mb-2.5', heightNwidth
@@ -11,9 +11,13 @@ const SkeletonLoader = ({ times, heightNwidth }) => {
     );
 
     const boxes = Array(times).fill(0).map((_, i) => {
-        return <div key={i} className={outerClassNames}>
-            <div className={innerClassNames} />
-        </div>
+        return (
+            <div key={i} className={addlStyle} >
+                <div className={outerClassNames}>
+                    <div className={innerClassNames} />
+                </div>
+            </div>
+        )
     })
 
     return boxes;

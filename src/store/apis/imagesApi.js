@@ -15,7 +15,7 @@ const imagesApi = createApi({
 
         // Dev Only
         fetchFn: async (...args) => {
-            await pause(300);
+            await pause(0);
             return fetch(...args);
         }
     }),
