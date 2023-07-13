@@ -77,24 +77,6 @@
   ],
   "images": [
     {
-      "albumId": 1,
-      "src": "https://images.pexels.com/photos/17268371/pexels-photo-17268371/free-photo-of-city-landscape-beach-water.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "alt": "something",
-      "id": 1
-    },
-    {
-      "albumId": 1,
-      "src": "https://images.pexels.com/photos/17268371/pexels-photo-17268371/free-photo-of-city-landscape-beach-water.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "alt": "something",
-      "id": 2
-    },
-    {
-      "albumId": 1,
-      "src": "https://images.pexels.com/photos/17268371/pexels-photo-17268371/free-photo-of-city-landscape-beach-water.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "alt": "something",
-      "id": 3
-    },
-    {
       "albumId": 2,
       "src": "https://picsum.photos/seed/LmFEWB/640/480",
       "alt": "Folding Bicycle",

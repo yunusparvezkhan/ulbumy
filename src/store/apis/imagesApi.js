@@ -56,8 +56,6 @@ const imagesApi = createApi({
                         body: {
                             albumId: album.id,
                             src: faker.image.urlPicsumPhotos(),
-                            // Adding this due to no other options
-                            alt: faker.vehicle.bicycle(),
                         }
                     }
                 }
