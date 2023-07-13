@@ -29,6 +29,21 @@
       "userId": 1,
       "name": "connect",
       "id": 4
+    },
+    {
+      "userId": 2,
+      "name": "generate",
+      "id": 5
+    },
+    {
+      "userId": 2,
+      "name": "program",
+      "id": 6
+    },
+    {
+      "userId": 2,
+      "name": "connect",
+      "id": 7
     }
   ],
   "images": [
@@ -115,6 +130,66 @@
       "src": "https://picsum.photos/seed/BeEJm06t/640/480",
       "alt": "Cruiser Bicycle",
       "id": 14
+    },
+    {
+      "albumId": 2,
+      "src": "https://picsum.photos/seed/oQF9Q6kY/640/480",
+      "alt": "Tandem Bicycle",
+      "id": 15
+    },
+    {
+      "albumId": 2,
+      "src": "https://picsum.photos/seed/C7gcVwVf55/640/480",
+      "alt": "Mountain Bicycle",
+      "id": 16
+    },
+    {
+      "albumId": 4,
+      "src": "https://picsum.photos/seed/aIJqUBDXpa/640/480",
+      "alt": "Road Bicycle",
+      "id": 17
+    },
+    {
+      "albumId": 4,
+      "src": "https://picsum.photos/seed/ZVfO7w/640/480",
+      "alt": "Road Bicycle",
+      "id": 18
+    },
+    {
+      "albumId": 5,
+      "src": "https://picsum.photos/seed/S1y3D2k/640/480",
+      "alt": "City Bicycle",
+      "id": 19
+    },
+    {
+      "albumId": 5,
+      "src": "https://picsum.photos/seed/9aar6ZQ/640/480",
+      "alt": "Road Bicycle",
+      "id": 20
+    },
+    {
+      "albumId": 5,
+      "src": "https://picsum.photos/seed/QR1EiH/640/480",
+      "alt": "Adventure Road Bicycle",
+      "id": 21
+    },
+    {
+      "albumId": 6,
+      "src": "https://picsum.photos/seed/lRdFLnJ8B/640/480",
+      "alt": "Tandem Bicycle",
+      "id": 22
+    },
+    {
+      "albumId": 7,
+      "src": "https://picsum.photos/seed/B2SET/640/480",
+      "alt": "Tandem Bicycle",
+      "id": 23
+    },
+    {
+      "albumId": 7,
+      "src": "https://picsum.photos/seed/cWPLMyf/640/480",
+      "alt": "Tricycle",
+      "id": 24
     }
   ]
 }

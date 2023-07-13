@@ -1,6 +1,7 @@
 import React from 'react'
 import { useCreateImageMutation, useFetchImagesQuery } from '../store'
 import Button from './Button';
+import ImageListItem from './ImageListItem';
 
 const ImageList = ({ album }) => {
     const { data, error, isLoading } = useFetchImagesQuery(album);
@@ -10,12 +11,7 @@ const ImageList = ({ album }) => {
 
     if (!isLoading && !error) {
         imagesArr = data.map((image) => {
-            return (
-                <div key={image.id} className='p-3 m-1 flex flex-col items-center '  >
-                    <img src={image.src} alt={image.alt} className='w-40 h-40' />
-                    <div className='text-sm text-center' >{image.alt}</div>
-                </div >
-            )
+            return <ImageListItem image={image} key={image.id} />
         })
     }
 
