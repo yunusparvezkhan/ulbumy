@@ -22,6 +22,14 @@ const imagesApi = createApi({
     endpoints(builder) {
         return {
             fetchImages: builder.query({
+                providesTags(result, error, album) {
+                    return [
+                        {
+                            tag: 'image',
+                            id: album.id
+                        }
+                    ]
+                },
                 query: (album) => {
                     return {
                         url: './images',
@@ -31,11 +39,33 @@ const imagesApi = createApi({
                         method: 'GET',
                     }
                 }
+            }),
+            createImage: builder.mutation({
+                invalidatesTags(result, error, album) {
+                    return [
+                        {
+                            tag: 'image',
+                            id: album.id
+                        }
+                    ]
+                },
+                query: (album) => {
+                    return {
+                        url: '/images',
+                        method: 'POST',
+                        body: {
+                            albumId: album.id,
+                            src: faker.image.urlPicsumPhotos(),
+                            // Adding this due to no other options
+                            alt: faker.vehicle.bicycle(),
+                        }
+                    }
+                }
             })
         }
     }
 })
 
 
-export const { useFetchImagesQuery } = imagesApi;
+export const { useFetchImagesQuery, useCreateImageMutation } = imagesApi;
 export { imagesApi };
