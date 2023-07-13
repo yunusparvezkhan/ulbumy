@@ -3,32 +3,18 @@
     {
       "name": "Florence Haag",
       "id": 1
-    },
-    {
-      "name": "Stuart Ziemann",
-      "id": 2
     }
   ],
   "albums": [
     {
       "userId": 1,
       "name": "reboot",
-      "id": 4
-    },
-    {
-      "userId": 1,
-      "name": "copy",
-      "id": 5
+      "id": 1
     },
     {
       "userId": 1,
       "name": "hack",
-      "id": 6
-    },
-    {
-      "userId": 1,
-      "name": "program",
-      "id": 7
+      "id": 2
     }
   ],
   "photos": []
