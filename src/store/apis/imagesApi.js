@@ -26,7 +26,7 @@ const imagesApi = createApi({
                     return [
                         {
                             tag: 'image',
-                            id: album.id
+                            id: album.id,
                         }
                     ]
                 },
@@ -34,7 +34,8 @@ const imagesApi = createApi({
                     return {
                         url: './images',
                         params: {
-                            albumId: album.id
+                            albumId: album.id,
+                            userId: album.userId
                         },
                         method: 'GET',
                     }
@@ -55,6 +56,7 @@ const imagesApi = createApi({
                         method: 'POST',
                         body: {
                             albumId: album.id,
+                            userId: album.userId,
                             src: faker.image.urlPicsumPhotos(),
                         }
                     }
